@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "./Form";
+import formSchema from "./formSchema";
 import "./App.css";
 
 function App() {
