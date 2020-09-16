@@ -5,19 +5,6 @@ import * as yup from "yup";
 import formSchema from "./formSchema";
 import "./App.css";
 
-// const inputChange = (name, value) => {
-//   validate(name, value);
-//   setFormValues({
-//     ...formValues,
-//     [name]: value,
-//   });
-// };
-
-const formSubmit = (e) => {
-  e.preventDefault();
-  console.log("submitted");
-};
-
 const initialFormValues = {
   name: "",
   email: "",
@@ -26,10 +13,10 @@ const initialFormValues = {
 };
 
 const initialFormErrors = {
-  username: "",
+  name: "",
   email: "",
-  role: "",
-  civil: "",
+  password: "",
+  terms: "",
 };
 
 const initalUserData = [];
@@ -42,11 +29,24 @@ function App() {
   const [formErrors, setFormErrors] = useState(initialFormErrors);
   const [disabled, setDisabled] = useState(initialDisabled);
 
+  const inputChange = (name, value) => {
+    // validate(name, value);
+    setFormValues({
+      ...formValues,
+      [name]: value,
+    });
+  };
+
+  const formSubmit = (e) => {
+    e.preventDefault();
+    console.log("submitted");
+  };
+
   return (
     <div className="App">
       <Form
         values={formValues}
-        // change={inputChange}
+        change={inputChange}
         submit={formSubmit}
         disabled={disabled}
         errors={formErrors}
