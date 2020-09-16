@@ -1,18 +1,6 @@
 import React, { useState } from "react";
-import formSchema from "./formSchema";
 
 export default function Form(props) {
-  const formSubmit = (e) => {
-    e.preventDefault();
-    console.log("submitted");
-  };
-
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
-
   return (
     <form>
       <label htmlFor="nameInput">
