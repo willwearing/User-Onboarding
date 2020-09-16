@@ -11,5 +11,4 @@ export default Yup.object().shape({
     .min(6, "Passwords must be at least 6 characters long.")
     .required("Password is Required"),
   terms: Yup.boolean().oneOf([true], "You must accept Terms and Conditions"),
-  // required isn't required for checkboxes.
 });
